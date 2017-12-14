@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <mainSkeleton v-if="!init"></mainSkeleton>
-    <div v-else>
+    <!-- <mainSkeleton v-if="!init"></mainSkeleton> -->
+    <div>
       <mainHeader></mainHeader>
       <div class="container" v-if="!isIndex">
         <sideNav class="nav"></sideNav>
@@ -17,7 +17,7 @@
   import mainHeader from './components/header.vue'
   import mainFooter from './components/footer.vue'
   import sideNav from './components/side-nav.vue'
-  import mainSkeleton from './main.skeleton.vue'
+  // import mainSkeleton from './main.skeleton.vue'
 
   export default {
     name: 'app',
@@ -41,8 +41,7 @@
     components: {
       mainHeader,
       sideNav,
-      mainFooter,
-      mainSkeleton
+      mainFooter
     }
   }
 </script>
