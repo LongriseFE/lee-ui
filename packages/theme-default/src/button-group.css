@@ -1,7 +1,34 @@
+@import 'common/var.css';
 .lee-button-group{
   font-size:0;
+  border-radius:5px;
+  overflow:hidden;
+  display:inline-block;
   .lee-button{
-    margin-left:-1px;
     border-radius:0;
+    border-top-width:0;
+    border-bottom-width:0;
+    border-left:1px solid #fff;
+    position:relative;
+    margin-left:-1px;
+    &:hover{
+      border-left-color:#fff;
+    }
+    &.lee-button-default{
+      border-top-width:1px;
+      border-bottom-width:1px;
+      border-left:1px solid $defaultborder;
+      &:hover{
+        border-left-color: $primary;
+        z-index:100;
+      }
+      &:last-child{
+        border-radius:0 5px 5px 0;
+      }
+      &:first-child{
+        border-radius: 5px 0 0 5px;
+        margin-left:0;
+      }
+    }
   }
 }

@@ -9,7 +9,8 @@
     'lee-button-size-'+size
     ]"
   >
-    <i v-if="icon !== ''" :class="icon"></i>
+    <i v-if="icon !== ''" :class="'iconfont ' + icon"></i>
+    <i v-if="loading" :class="'iconfont icon-loading'"></i>
     <slot></slot>
   </button>
 </template>
@@ -31,7 +32,8 @@
       },
       plain: Boolean,
       disabled: Boolean,
-      round: Boolean
+      round: Boolean,
+      loading: Boolean
     },
     data () {
       return {
