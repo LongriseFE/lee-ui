@@ -121,11 +121,11 @@
 ::: demo
 ```html
 
-<lee-button icon="lee-icon-tag" type="primary"></lee-button>
-<lee-button icon="lee-icon-close" type="primary"></lee-button>
-<lee-button icon="lee-icon-smile" type="primary"></lee-button>
-<lee-button icon="lee-icon-search" type="primary">搜索</lee-button>
-<lee-button icon="lee-icon-cloudfill" type="primary">下载</lee-button>
+<lee-button icon="icon-search" type="primary"></lee-button>
+  <lee-button icon="icon-edit" type="primary"></lee-button>
+  <lee-button icon="icon-delete" type="primary"></lee-button>
+  <lee-button icon="icon-set" type="primary">搜索</lee-button>
+  <lee-button icon="icon-warning" type="primary">下载</lee-button>
 
 ```
 :::
@@ -172,12 +172,42 @@
 
 ::: demo
 ```html
+<div class="m-10">
+    <lee-button-group>
+      <lee-button icon="icon-back">默认尺寸</lee-button>
+      <lee-button icon="icon-cry">中等按钮</lee-button>
+      <lee-button icon="icon-more">小型按钮</lee-button>
+    </lee-button-group>
+  </div>
+  <div class="m-10">
+    <lee-button-group>
+      <lee-button icon="icon-back"></lee-button>
+      <lee-button icon="icon-cry"></lee-button>
+      <lee-button icon="icon-more"></lee-button>
+    </lee-button-group>
+  </div>
+  <div class="m-10">
+    <lee-button-group>
+      <lee-button type="primary">默认尺寸</lee-button>
+      <lee-button type="primary">中等按钮</lee-button>
+      <lee-button type="primary">小型按钮</lee-button>
+    </lee-button-group>
+  </div>
+  <div class="m-10">
+    <lee-button-group>
+      <lee-button type="danger">默认尺寸</lee-button>
+      <lee-button type="danger">中等按钮</lee-button>
+      <lee-button type="danger">小型按钮</lee-button>
+    </lee-button-group>
+  </div>
+  <div class="m-10">
+    <lee-button-group>
+      <lee-button icon="icon-back" type="warning"></lee-button>
+      <lee-button icon="icon-cry" type="warning"></lee-button>
+      <lee-button icon="icon-more" type="warning"></lee-button>
+    </lee-button-group>
+  </div>
 
-<lee-button-group>
-  <lee-button>默认尺寸</lee-button>
-  <lee-button>中等按钮</lee-button>
-  <lee-button>小型按钮</lee-button>
-</lee-button-group>
 ```
 :::
 ### 加载中
@@ -192,13 +222,7 @@
 
 ```html
 
-<lee-button>默认尺寸</lee-button>
-<lee-button size="medium">中等按钮</lee-button>
-<lee-button size="small">小型按钮</lee-button>
-
-<lee-button round>默认尺寸</lee-button>
-<lee-button round size="medium">中等按钮</lee-button>
-<lee-button round size="small">小型按钮</lee-button>
+<lee-button type="primary" :loading="true">加载中</lee-button>
 ```
 :::
 
@@ -239,5 +263,6 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
 | size     | 尺寸   | string  |   default,medium,small            |    —     |
 | type     | 类型   | string    |   primary,success,warning,danger,info |     —    |
 | plain     | 是否朴素按钮   | Boolean    | — | false   |
-| disabled  | 是否禁用状态    | boolean   | —   | false   |
+| disabled  | 是否禁用状态    | Boolean   | —   | false   |
 | icon  | 图标，已有的图标库中的图标名 | string   |  —  |  —  |
+| loading  | 是否正在加载中！ | Boolean   |  —  |  false |

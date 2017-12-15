@@ -224,4 +224,10 @@
   &.is-disabled{
     cursor: not-allowed;
   }
+  &.is-loading{
+    opacity: 0.5;
+    .icon-refresh{
+      animation: spinner 2s linear infinite;
+    }
+  }
 }

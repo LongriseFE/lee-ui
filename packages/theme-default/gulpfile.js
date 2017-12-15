@@ -8,6 +8,7 @@ var mixins = require('postcss-mixins')
 var simplevars = require('postcss-simple-vars')
 var nested = require('postcss-nested')
 var cssnano = require('cssnano')
+var autoprefixer = require('autoprefixer')
 
 gulp.task('compile', function () {
   var processors = [
@@ -16,7 +17,8 @@ gulp.task('compile', function () {
     mixins,
     simplevars,
     nested,
-    cssnano
+    cssnano,
+    autoprefixer
   ]
   return gulp.src('./src/*.css')
     .pipe(postcss(processors))

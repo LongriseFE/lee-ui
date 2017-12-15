@@ -5,12 +5,15 @@
     :disabled="disabled"
     :class="[
     'lee-button-'+type,
-    {'is-plain': plain, 'is-disabled': disabled, 'is-round': round},
+    {'is-plain': plain,
+    'is-disabled': disabled,
+    'is-loading': loading,
+    'is-round': round},
     'lee-button-size-'+size
     ]"
   >
     <i v-if="icon !== ''" :class="'iconfont ' + icon"></i>
-    <i v-if="loading" :class="'iconfont icon-loading'"></i>
+    <span v-if="loading" :class="'iconfont icon-refresh'"></span>
     <slot></slot>
   </button>
 </template>
