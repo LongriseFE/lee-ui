@@ -130,15 +130,42 @@
 ```
 :::
 
+### 按钮组
+以按钮组的方式出现，常用于多项类似操作。
+<div class="demo-block">
+  <lee-button-group>
+    <lee-button>默认尺寸</lee-button>
+    <lee-button>中等按钮</lee-button>
+    <lee-button>小型按钮</lee-button>
+  </lee-button-group>
+</div>
+
+::: demo
+```html
+
+<lee-button-group>
+  <lee-button>默认尺寸</lee-button>
+  <lee-button>中等按钮</lee-button>
+  <lee-button>小型按钮</lee-button>
+</lee-button-group>
+```
+:::
 
 ### 不同尺寸
 
 Button 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的按钮尺寸。
 额外的尺寸：```medium```、```small```，通过设置```size```属性来配置它们。
 <div class="demo-block">
-  <lee-button>默认尺寸</lee-button>
-  <lee-button size="medium">中等按钮</lee-button>
-  <lee-button size="small">小型按钮</lee-button>
+  <div class="m-10">
+    <lee-button>默认尺寸</lee-button>
+    <lee-button size="medium">中等按钮</lee-button>
+    <lee-button size="small">小型按钮</lee-button>
+  </div>
+  <div class="m-10">
+    <lee-button round>默认尺寸</lee-button>
+    <lee-button round size="medium">中等按钮</lee-button>
+    <lee-button round size="small">小型按钮</lee-button>
+  </div>
 </div>
 
 ::: demo
@@ -148,6 +175,9 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
 <lee-button size="medium">中等按钮</lee-button>
 <lee-button size="small">小型按钮</lee-button>
 
+<lee-button round>默认尺寸</lee-button>
+<lee-button round size="medium">中等按钮</lee-button>
+<lee-button round size="small">小型按钮</lee-button>
 ```
 :::
 

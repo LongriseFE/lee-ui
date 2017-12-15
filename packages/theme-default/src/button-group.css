@@ -1,0 +1,7 @@
+.lee-button-group{
+  font-size:0;
+  .lee-button{
+    margin-left:-1px;
+    border-radius:0;
+  }
+}
