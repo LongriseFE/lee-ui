@@ -1,0 +1,15 @@
+.lee-col{
+  display:inline-block;
+  vertical-align:top;
+  height:100%;
+  font-size:14px;
+  box-sizing:border-box;
+}
+@each $index in 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 {
+  .lee-col-$index {
+    width: calc(100/24*$(index))%;
+  }
+  .lee-col-offset-$index{
+    margin-left: calc(100/24*$(index))%;
+  }
+}

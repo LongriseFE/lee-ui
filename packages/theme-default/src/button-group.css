@@ -2,7 +2,6 @@
 .lee-button-group{
   font-size:0;
   border-radius:5px;
-  overflow:hidden;
   display:inline-block;
   .lee-button{
     border-radius:0;

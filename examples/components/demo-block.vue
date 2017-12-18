@@ -41,7 +41,7 @@
     height: auto;
     box-sizing: border-box;
     font-size: 14px;
-    background-color: #F7F7F7;
+    background-color: #FAFAFA;
     border: 1px solid #e2ecf4;
     border-top: none;
     pre code {
@@ -54,12 +54,21 @@
     width: 100%;
     text-align: center;
     display: inline-block;
-    color: #C5D9E8;
+    color: #d3dce6;
     font-size: 12px;
-    padding: 10px 0;
-    background-color: #FAFBFC;
+    padding: 15px 0;
+    background-color: #fff;
+    border:1px solid #EBEBEB;
+    box-sizing: border-box;
+    border-top:none;
+    border-radius:0 0 5px 5px;
+    cursor: pointer;
+    transition:0.3s;
   }
-
+  .docs-trans:hover{
+    background:#F9FAFC;
+    color:#308AE6;
+  }
   .docs-demo__code,
   .highlight-wrapper,
   .docs-demo__meta {

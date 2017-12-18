@@ -9,6 +9,7 @@ var simplevars = require('postcss-simple-vars')
 var nested = require('postcss-nested')
 var cssnano = require('cssnano')
 var autoprefixer = require('autoprefixer')
+var each = require('postcss-each')
 
 gulp.task('compile', function () {
   var processors = [
@@ -18,7 +19,8 @@ gulp.task('compile', function () {
     simplevars,
     nested,
     cssnano,
-    autoprefixer
+    autoprefixer,
+    each
   ]
   return gulp.src('./src/*.css')
     .pipe(postcss(processors))
