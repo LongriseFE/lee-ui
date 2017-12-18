@@ -24,6 +24,11 @@ export default new Router({
       path: '/icon',
       name: 'icon',
       component: r => require.ensure([], () => r(require('../docs/icon.md')))
+    },
+    {
+      path: '/radio',
+      name: 'radio',
+      component: r => require.ensure([], () => r(require('../docs/radio.md')))
     }
   ]
 })

@@ -49,13 +49,13 @@
       ]
     },
     {
-      "desc": "视图组件",
+      "desc": "表单",
       "path": "/component",
       "items": [
         {
-          "desc": "Showmore 显示更多",
-          "name": "show-more",
-          "path": "/showMore"
+          "desc": "radio单选框",
+          "name": "radio",
+          "path": "/radio"
         },
         {
           "desc": "Limit 限制输入域",
