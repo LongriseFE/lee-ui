@@ -1,15 +1,27 @@
 <template>
-  <label :for="'radio_' + name + label">
-    <input
-      type="radio"
-      :name="name"
-      :id="'radio_' + name + label"
-      :value="label"
-      @change="handleChange"
-      v-model="model"
-      :checked="model === label"
+  <label
+    class="lee-radio"
+    :for="'radio_' + name + label"
+    :class="{
+      'is-checked': model === label,
+      'is-disabled': isDisabled
+    }"
+  >
+    <span
+      class="lee-radio-circle"
     >
-    <span>
+      <input
+        type="radio"
+        :name="name"
+        :id="'radio_' + name + label"
+        :value="label"
+        @change="handleChange"
+        v-model="model"
+        :checked="model === label"
+        :disabled="isDisabled"
+      >
+    </span>
+    <span class="lee-radio-text">
       <slot></slot>
     </span>
   </label>
@@ -23,7 +35,9 @@
         default: ''
       },
       label: {
-      }
+      },
+      value: {},
+      disabled: Boolean
     },
     computed: {
       isGroup () {
@@ -49,6 +63,11 @@
             this.$emit('input', val)
           }
         }
+      },
+      isDisabled () {
+        return this.isGroup
+          ? this._radioGroup.disabled || this.disabled
+          : this.disabled
       }
     },
     methods: {

@@ -1,0 +1,70 @@
+@import 'common/var.css';
+.lee-radio{
+  font-size:0;
+  vertical-align:middle;
+  margin-right:10px;
+  .lee-radio-circle{
+    display:inline-block;
+    vertical-align:middle;
+    width:16px;
+    height:16px;
+    border:1px solid #DDE0E6;
+    border-radius:50%;
+    position:relative;
+    box-sizing:border-box;
+    transition:0.3s;
+    margin-right:5px;
+    input[type=radio]{
+      display:none;
+    }
+    &:before{
+      content:"";
+      display:inline-block;
+      width:6px;
+      height:6px;
+      background-color: #fff;
+      position:absolute;
+      top:50%;
+      left:50%;
+      margin-top:-3px;
+      margin-left:-3px;
+      border-radius:50%;
+    }
+  }
+  .lee-radio-text{
+    display:inline-block;
+    font-size:14px;
+    color:#666;
+    vertical-align:middle;
+    transition:0.3s;
+  }
+  &.is-checked{
+    .lee-radio-circle:before{
+      background-color: $primary;
+    }
+    .lee-radio-circle{
+      border:2px solid $primary;
+    }
+    .lee-radio-text{
+      color: $primary;
+    }
+  }
+  &.is-disabled{
+    .lee-radio-circle{
+      background:#F5F7FA;
+      border-color:#e4e7ed;
+      &:before{
+        background:#F5F7FA;
+      }
+    }
+    &.is-checked{
+      .lee-radio-circle{
+        border:1px solid #e4e7ed;
+        &:before{
+          display:inline-block;
+          background:#C0C4CC;
+        }
+      }
+    }
+  }
+}
