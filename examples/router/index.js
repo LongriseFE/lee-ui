@@ -29,6 +29,11 @@ export default new Router({
       path: '/radio',
       name: 'radio',
       component: r => require.ensure([], () => r(require('../docs/radio.md')))
+    },
+    {
+      path: '/checkbox',
+      name: 'checkbox',
+      component: r => require.ensure([], () => r(require('../docs/checkbox.md')))
     }
   ]
 })
