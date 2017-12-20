@@ -7,6 +7,7 @@
   import Emitter from '../../../src/mixins/emitter'
   export default {
     name: 'LeeRadioGroup',
+    componentName: 'LeeRadioGroup',
     mixins: [Emitter],
     props: {
       value: {},
@@ -17,11 +18,6 @@
       this.$on('handleChange', value => {
         this.$emit('change', value);
       });
-    },
-    methods: {
-      input (v) {
-        console.log(v)
-      }
     },
     watch: {
       value(value) {

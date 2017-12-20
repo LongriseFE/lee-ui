@@ -1,26 +1,23 @@
 <template>
   <label
-    class="lee-radio"
+    class="lee-radio-button"
     :for="'radio_' + name + label"
-    :class="{
-      'is-checked': model === label,
-      'is-disabled': isDisabled
-    }"
+    :class="[
+      size ? 'lee-radio-' + size : '',
+      {'is-checked': model === label},
+      {'is-disabled': isDisabled}
+    ]"
   >
-    <span
-      class="lee-radio-circle"
+    <input
+      type="radio"
+      :name="name"
+      :id="'radio_' + name + label"
+      :value="label"
+      @change="handleChange"
+      v-model="model"
+      :checked="model === label"
+      :disabled="isDisabled"
     >
-      <input
-        type="radio"
-        :name="name"
-        :id="'radio_' + name + label"
-        :value="label"
-        @change="handleChange"
-        v-model="model"
-        :checked="model === label"
-        :disabled="isDisabled"
-      >
-    </span>
     <span class="lee-radio-text">
       <slot></slot>
     </span>
@@ -29,8 +26,8 @@
 <script>
   import Emitter from '../../../src/mixins/emitter'
   export default {
-    name: 'LeeRadio',
-    componentName: 'LeeRadio',
+    name: 'LeeRadioButton',
+    componentName: 'LeeRadioButton',
     mixins: [Emitter],
     props: {
       name: {
@@ -40,6 +37,7 @@
       label: {
       },
       value: {},
+      size: {},
       disabled: Boolean
     },
     computed: {
