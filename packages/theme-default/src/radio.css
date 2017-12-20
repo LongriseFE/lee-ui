@@ -57,9 +57,12 @@
         background:#F5F7FA;
       }
     }
+    .lee-radio-text{
+      color:#999;
+    }
     &.is-checked{
       .lee-radio-circle{
-        border:1px solid #e4e7ed;
+        border:1px solid #c0c4cc;
         &:before{
           display:inline-block;
           background:#C0C4CC;

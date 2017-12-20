@@ -27,8 +27,10 @@
   </label>
 </template>
 <script>
+  import Emitter from '../../../src/mixins/emitter'
   export default {
     name: 'LeeRadio',
+    mixins: [Emitter],
     props: {
       name: {
         type: String,
