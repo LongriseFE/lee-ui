@@ -1,5 +1,5 @@
 <template>
-  <div class="lee-checkbox-group">
+  <div class="lee-checkbox-group" role="group" aria-label="checkbox-group">
     <slot></slot>
   </div>
 </template>
@@ -8,23 +8,32 @@
   export default {
     name: 'LeeCheckboxGroup',
     componentName: 'LeeCheckboxGroup',
+    mixins: [Emitter],
+    inject: {
+      leeFormItem: {
+        default: ''
+      }
+    },
     props: {
       value: {},
       disabled: Boolean,
       min: Number,
       max: Number,
       size: String,
-      fill: string,
+      fill: String,
       textColor: String
     },
     computed: {
-      checkboxGroupSize () {
-
+      _leeFormItemSize() {
+        return (this.leeFormItem || {}).leeFormItemSize;
+      },
+      checkboxGroupSize() {
+        return this.size || this._leeFormItemSize || (this.$ELEMENT || {}).size;
       }
     },
     watch: {
       value(value) {
-        this.dispatch('ElFormItem', 'el.form.change', [value]);
+        this.dispatch('LeeFormItem', 'lee.form.change', [value]);
       }
     }
   }

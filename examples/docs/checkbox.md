@@ -2,7 +2,7 @@
   export default {
     data () {
       return {
-        checkbox: true,
+        checkbox: false,
         checkbox1: true,
         checkbox2: false,
         checkbox3: ['复选框A']
@@ -16,7 +16,7 @@
 单独使用可以表示两种状态之间的切换，写在标签中的内容为 checkbox 按钮后的介绍。
 在```el-checkbox```元素中定义```v-model```绑定变量，单一的```checkbox```中，默认绑定变量的值会是```Boolean```，选中为```true```。
 <div class="demo-block">
-  <lee-checkbox v-model="checkbox" label="1" name="name">备选项</lee-checkbox>
+  <lee-checkbox v-model="checkbox">备选项</lee-checkbox>
 </div>
 
 ::: demo
