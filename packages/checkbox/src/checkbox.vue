@@ -1,9 +1,9 @@
 <template>
   <label
     class="lee-checkbox"
-    :for="'checkbox_' + name + label"
+    :for="'checkbox_' + name"
     :class="{
-      'is-checked': model === label,
+      'is-checked': model,
       'is-disabled': isDisabled
     }"
   >
@@ -13,11 +13,11 @@
       <input
         type="checkbox"
         :name="name"
-        :id="'checkbox_' + name + label"
+        :id="'checkbox_' + name"
         :value="label"
         @change="handleChange"
         v-model="model"
-        :checked="model === label"
+        :checked="model"
         :disabled="isDisabled"
       >
     </span>

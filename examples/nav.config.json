@@ -61,6 +61,11 @@
           "desc": "checkbox复选框",
           "name": "checkbox",
           "path": "/checkbox"
+        },
+        {
+          "desc": "form表单",
+          "name": "form",
+          "path": "/form"
         }
       ]
     }

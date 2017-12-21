@@ -13,6 +13,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "async-validator": "^1.8.2",
     "babel-polyfill": "^6.26.0",
     "github-markdown-css": "^2.9.0",
     "vue": "^2.5.2",

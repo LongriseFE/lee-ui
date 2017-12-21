@@ -2,7 +2,7 @@
  * @Author: swimly
  * @Date: 2017-12-14 13:55:31
  * @Last Modified by: swimly
- * @Last Modified time: 2017-12-20 18:18:21
+ * @Last Modified time: 2017-12-21 17:52:42
  */
 import LeeButton from './button/index'
 import LeeButtonGroup from './button-group/index'
@@ -12,6 +12,8 @@ import LeeRadio from './radio/index'
 import LeeRadioGroup from './radio-group/index'
 import LeeRadioButton from './radio-button/index'
 import LeeCheckbox from './checkbox/index'
+import LeeForm from './form/index'
+import LeeFormItem from './form-item/index'
 const components = [
   LeeButton,
   LeeButtonGroup,
@@ -20,7 +22,9 @@ const components = [
   LeeRadio,
   LeeRadioGroup,
   LeeRadioButton,
-  LeeCheckbox
+  LeeCheckbox,
+  LeeForm,
+  LeeFormItem
 ]
 const install = function (Vue) {
   if (install.installed) return
@@ -40,5 +44,7 @@ export default {
   LeeRadio,
   LeeRadioGroup,
   LeeRadioButton,
-  LeeCheckbox
+  LeeCheckbox,
+  LeeForm,
+  LeeFormItem
 }
