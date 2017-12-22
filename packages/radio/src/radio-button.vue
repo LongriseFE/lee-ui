@@ -4,9 +4,15 @@
     :for="'radio_' + name + label"
     :class="[
       size ? 'lee-radio-' + size : '',
-      {'is-checked': model === label},
-      {'is-disabled': isDisabled}
+      {'is-checked': value === label},
+      {'is-disabled': isDisabled},
+      {'is-focus': focus}
     ]"
+    role="radio"
+    :aria-checked="value === label"
+    :aria-disabled="isDisabled"
+    :tabindex="tabIndex"
+    @keydown.space.stop.prevent="value = label"
   >
     <input
       type="radio"
@@ -14,12 +20,16 @@
       :id="'radio_' + name + label"
       :value="label"
       @change="handleChange"
-      v-model="model"
-      :checked="model === label"
+      v-model="value"
+      :checked="value === label"
       :disabled="isDisabled"
+      tabindex="-1"
+      @focus="focus = true"
+      @blur="focus = false"
     >
-    <span class="lee-radio-text">
+    <span class="lee-radio-text" :style="value === label ? activeStyle : null">
       <slot></slot>
+      <template v-if="!$slots.default">{{label}}</template>
     </span>
   </label>
 </template>
@@ -30,53 +40,61 @@
     componentName: 'LeeRadioButton',
     mixins: [Emitter],
     props: {
-      name: {
-        type: String,
-        default: ''
-      },
-      label: {
-      },
-      value: {},
-      size: {},
-      disabled: Boolean
+      label: {},
+      disabled: Boolean,
+      name: String
+    },
+    data () {
+      return {
+        focus: false
+      }
     },
     computed: {
-      isGroup () {
-        let parent = this.$parent
+      value: {
+        get () {
+          return this._radioGroup.value
+        },
+        set (value) {
+          this._radioGroup.$emit('input', value)
+        }
+      },
+      _radioGroup() {
+        let parent = this.$parent;
         while (parent) {
           if (parent.$options.componentName !== 'LeeRadioGroup') {
-            parent = parent.$parent
+            parent = parent.$parent;
           } else {
-            this._radioGroup = parent
-            return true
+            return parent;
           }
         }
-        return false
+        return false;
       },
-      model: {
-        get () {
-          return this.isGroup ? this._radioGroup.value : this.value
-        },
-        set (val) {
-          if (this.isGroup) {
-            this.dispatch('LeeRadioGroup', 'input', [val])
-          } else {
-            this.$emit('input', val)
-          }
-        }
+      activeStyle() {
+        return {
+          backgroundColor: this._radioGroup.fill || '',
+          borderColor: this._radioGroup.fill || '',
+          boxShadow: this._radioGroup.fill ? `-1px 0 0 0 ${this._radioGroup.fill}` : '',
+          color: this._radioGroup.textColor || ''
+        };
       },
-      isDisabled () {
-        return this.isGroup
-          ? this._radioGroup.disabled || this.disabled
-          : this.disabled
+      _leeFormItemSize() {
+        return (this.leeFormItem || {}).leeFormItemSize;
+      },
+      size() {
+        return this._radioGroup.radioGroupSize || this._leeFormItemSize || (this.$ELEMENT || {}).size;
+      },
+      isDisabled() {
+        return this.disabled || this._radioGroup.disabled;
+      },
+      tabIndex() {
+        return !this.isDisabled ? (this._radioGroup ? (this.value === this.label ? 0 : -1) : 0) : -1;
       }
     },
     methods: {
       handleChange() {
         this.$nextTick(() => {
-          this.$emit('change', this.model);
-          this.isGroup && this.dispatch('LeeRadioGroup', 'handleChange', this.model);
-        })
+          this.dispatch('LeeRadioGroup', 'handleChange', this.value);
+        });
       }
     }
   }

@@ -17,6 +17,7 @@
     "babel-polyfill": "^6.26.0",
     "github-markdown-css": "^2.9.0",
     "vue": "^2.5.2",
+    "vue-clipboard2": "^0.0.8",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

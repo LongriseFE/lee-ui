@@ -6,6 +6,14 @@
       return {
         icons: iconList
       };
+    },
+    methods: {
+      onCopy: function (e) {
+        alert('复制成功: ' + e.text + '！')
+      },
+      onError: function (e) {
+        alert('复制失败，请重试！')
+      }
     }
   }
 </script>
@@ -48,13 +56,14 @@
       line-height: normal;
       vertical-align: middle;
       font-family: 'Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',SimSun,sans-serif;
-      color: #99a9bf;
+      color: #606266;
+      cursor:pointer;
     }
-    i {
+    .lee-icon {
       display: block;
       font-size: 32px;
       margin-bottom: 15px;
-      color: #3f536e;
+      color: #606266;
     }
     &:hover {
       color: rgb(92, 182, 255);
@@ -69,10 +78,11 @@
 
 使用 ```class="icon"``` 来声明图标，具体图标的名称请 copy 相应的标签
 <div class="demo-block">
-  <i class="iconfont icon-component fs-24"></i>
-  <i class="iconfont icon-survey1 fs-24"></i>
-  <i class="iconfont icon-templatedefault fs-24"></i>
-  <i class="iconfont icon-office fs-24"></i>
+  <lee-icon name="code" size="30" color="#666"></lee-icon>
+  <lee-icon name="bags" size="30" color="#666"></lee-icon>
+  <lee-icon name="task-management" size="30" color="#666"></lee-icon>
+  <lee-icon name="video" size="30" color="#666"></lee-icon>
+  <lee-icon name="favorites" size="30" color="#666"></lee-icon>
 </div>
 
 ::: demo
@@ -89,10 +99,14 @@
 ## 图标示例
 
 <ul class="icon-list">
-  <li v-for="name in icons" :key="name">
-    <span>
-      <i :class="'iconfont icon-' + name"></i>
-      {{'icon-' + name}}
+  <li v-for="(name, index) in icons" :key="index">
+    <span
+      v-clipboard:copy="name"
+      v-clipboard:success="onCopy"
+      v-clipboard:error="onError"
+    >
+      <lee-icon :name="name"></lee-icon>
+      {{name}}
     </span>
   </li>
 </ul>

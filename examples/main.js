@@ -7,6 +7,8 @@ import router from './router'
 import demoBlock from './components/demo-block.vue'
 import LeeUI from '../packages/index'
 import '../packages/theme-default/lib/index.css'
+import VueClipboard from 'vue-clipboard2'
+Vue.use(VueClipboard)
 Vue.component('demo-block', demoBlock)
 Vue.use(LeeUI)
 Vue.config.productionTip = false

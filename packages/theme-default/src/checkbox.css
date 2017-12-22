@@ -1,4 +1,54 @@
 @import 'common/var.css';
+.lee-checkbox-button{
+  display:inline-block;
+  vertical-align:middle;
+  font-size:14px;
+  border:1px solid $defaultborder;
+  color: $defaulttext;
+  padding: 12px 20px;
+  margin-left:-1px;
+  position:relative;
+  &.is-disabled{
+    border-color:#EBEEF5;
+    color:#c0c4cc;
+    cursor:not-allowed;
+  }
+  &.lee-checkbox-button-mini{
+    padding:5px 10px;
+  }
+  &.lee-checkbox-button-small{
+    padding:8px 15px;
+  }
+  &.lee-checkbox-button-medium{
+    padding:10px 20px;
+  }
+  &.is-checked{
+    background-color: $primary;
+    color:#fff;
+    border-left-color: #fff;
+    border-right-color: #fff;
+    border-top-color: $primary;
+    border-bottom-color: $primary;
+    z-index:100;
+    &.is-disabled{
+      background-color:color($primary alpha(-90%));
+      border-color: color($primary alpha(-90%));
+      color:#c0c4cc;
+    }
+  }
+  &:last-child{
+    border-radius: 0 5px 5px 0;
+  }
+  &:first-child{
+    border-radius: 5px 0 0 5px;
+  }
+  input{
+    display:none;
+    &:focus{
+      outline:none;
+    }
+  }
+}
 .lee-checkbox{
   display:inline-block;
   vertical-align:middle;
@@ -9,7 +59,7 @@
       background-color:#EDF2FC;
       border-color:#DCDFE6;
     }
-    .lee-checkbox-text{
+    .lee-checkbox-label{
       color:#c0c4cc;
       cursor:not-allowed;
     }
@@ -23,7 +73,7 @@
           border-color:#c0c4cc;
         }
       }
-      .lee-checkbox-text{
+      .lee-checkbox-label{
         color:#c0c4cc;
         cursor:not-allowed;
       }
@@ -35,11 +85,11 @@
         transform: rotate(45deg) scaleY(1);
       }
     }
-    .lee-checkbox-text{
+    .lee-checkbox-label{
       color:$primary;
     }
   }
-  .lee-checkbox-text{
+  .lee-checkbox-label{
     display:inline-block;
     vertical-align:middle;
     color:$defaulttext;
@@ -71,6 +121,23 @@
       width:6px;
           transition: transform .1s cubic-bezier(.71,-.46,.88,.6) .05s;
       transform-origin: center;
+    }
+  }
+  .is-indeterminate{
+    background-color: $primary;
+    border-color:$primary;
+    position:relative;
+    &:before{
+      content:'';
+      position:absolute;
+      display:inline-block;
+      background-color:#fff;
+      height:2px;
+      width:10px;
+      margin-left:-5px;
+      left:50%;
+      top:50%;
+      margin-top:-1px;
     }
   }
 }
