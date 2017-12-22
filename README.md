@@ -10,3 +10,7 @@ import LeeUI from 'lee-ui'
 import '../packages/theme-default/lib/index.css'
 Vue.use(LeeUI)
 ```
+## 详细使用
+[github仓库](https://github.com/LongriseFE/lee-ui)
+
+[文档](http://fe.swimly.cn/lee-ui/#/install)
