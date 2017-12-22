@@ -39,6 +39,11 @@ export default new Router({
       path: '/form',
       name: 'form',
       component: r => require.ensure([], () => r(require('../docs/form.md')))
+    },
+    {
+      path: '/install',
+      name: 'install',
+      component: r => require.ensure([], () => r(require('../docs/install.md')))
     }
   ]
 })

@@ -40,12 +40,14 @@
       .slid-nav-component{
         display: block;
         position: relative;
-        padding: 6px 24px 6px 32px;
+        padding: 2px 24px 2px 32px;
         color: #616367;
         font-size: 14px;
+        margin:10px 0;
       }
       .active{
-        color: #3FAAF5;
+        color: #409EFF;
+        border-right:2px solid #409EFF;
       }
     }
   }

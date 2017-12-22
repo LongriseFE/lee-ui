@@ -97,6 +97,7 @@
 :::
 
 ## 图标示例
+点击图标即可复制改图标名称！
 
 <ul class="icon-list">
   <li v-for="(name, index) in icons" :key="index">
