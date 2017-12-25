@@ -53,14 +53,19 @@
       "path": "/component",
       "items": [
         {
-          "desc": "radio单选框",
+          "desc": "Radio单选框",
           "name": "radio",
           "path": "/radio"
         },
         {
-          "desc": "checkbox复选框",
+          "desc": "Checkbox复选框",
           "name": "checkbox",
           "path": "/checkbox"
+        },
+        {
+          "desc": "Input输入框",
+          "name": "input",
+          "path": "/input"
         },
         {
           "desc": "form表单",

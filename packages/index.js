@@ -2,7 +2,7 @@
  * @Author: swimly
  * @Date: 2017-12-14 13:55:31
  * @Last Modified by: swimly
- * @Last Modified time: 2017-12-22 15:17:50
+ * @Last Modified time: 2017-12-25 15:07:54
  */
 import LeeButton from './button/index'
 import LeeButtonGroup from './button-group/index'
@@ -17,6 +17,7 @@ import LeeForm from './form/index'
 import LeeFormItem from './form-item/index'
 import LeeCheckboxButton from './checkbox-button/index'
 import LeeIcon from './icon/index'
+import LeeInput from './input/index'
 const components = [
   LeeButton,
   LeeButtonGroup,
@@ -30,7 +31,8 @@ const components = [
   LeeForm,
   LeeFormItem,
   LeeCheckboxButton,
-  LeeIcon
+  LeeIcon,
+  LeeInput
 ]
 const install = function (Vue) {
   if (install.installed) return
@@ -55,5 +57,6 @@ export default {
   LeeForm,
   LeeFormItem,
   LeeCheckboxButton,
-  LeeIcon
+  LeeIcon,
+  LeeInput
 }
